@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organizer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" href="base.css" rel="stylesheet">
+</head>
+<body>
+<div id="container">
+    <button id="play">Запуск</button>
+    <button id="pause">Остановка</button>
+    <p>
+        Переключить режим
+        <input type="checkbox" id="show_notifications" checked="checked"/>
+    </p>
+
+    <input type="text" id="timeInput" class="input_date" value="123"/>
+    <p>Консоль:
+        <output id="console1" name="result">Консоль вывода 1</output>
+    </p>
+    <!-- подключаем скрипт, который обработает нажатие на эту кнопку -->
+</div>
+<!--Скрипт всегда должен подгружаться после прогрузки верхних элементов, иначе скрипт не видит кнопки-->
+<script src="js/popup.js"></script>
+</body>
+</html>

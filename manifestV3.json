@@ -1,0 +1,24 @@
+{
+  "name": "Movie Connector",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "cookies",
+    "notifications",
+    "https://ajax.googleapis.com/*",
+    "https://thecode.media/wp-content/uploads/2019/12/snowfall2020.js"
+  ],
+  "action": {
+    "default_icon": {
+      "32": "/images/play32.png",
+      "48": "/images/play48.png",
+      "64": "/images/play64.png",
+      "128": "/images/play128.png"
+    },
+    "default_popup": "popup.html",
+    "background": { "scripts": ["background.js"] }
+  }
+}

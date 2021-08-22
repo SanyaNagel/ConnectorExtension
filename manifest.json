@@ -1,0 +1,44 @@
+{
+    "name": "Movie Connector",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Расширение для совместного просмотра фильмов с возможностью синхронизации",
+    "developer": {
+        "name": "Nagel Alexandr",
+        "url": "https://github.com/SanyaNagel/"
+    },
+    "icons": {
+        "16": "/images/logo16.png",
+        "32": "/images/logo32.png",
+        "48": "/images/logo48.png",
+        "128": "/images/logo128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "http://*/*",
+        "https://*/*",
+        "tabs",
+        "contextMenus",
+        "storage",
+        "cookies",
+        "notifications",
+        "https://ajax.googleapis.com/*"
+    ],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_icon": "images/play.png",
+        "default_popup": "popup.html",
+        "icon_128": "images/play.png"
+    },
+
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["js/background.js"]
+    }],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+}
