@@ -1,25 +1,24 @@
-Указать в соавторстве иконки: 
-<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+Код хорошо прокоментирован!
 
-Иконку брал с сайта https://www.flaticon.com/search?word=organizer
-
-Нажатие по xpath
- document.evaluate ("//*[@id='oframeplayer']/pjsdiv[1]/video", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.pause();
- document.evaluate ("//*[@id='oframeplayer']/pjsdiv[1]/video", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.play();
- document.evaluate ("//*[@id="oframeplayer"]/pjsdiv[1]/video", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.play();
-
- document.getElementsByTagName("video")[0].play();
- document.getElementsByTagName("video")[0].pause();
-
-document.getElementsByTagName("video")[0].currentTime = 100
-
-API video тег: https://professorweb.ru/my/html/html5/level3/3_3.php
+popup.html    - HTML - страница (дисплей расширения)
+background.js - фоновый JS - обращается к странице. Здесь нам и нужно получить video элемент.
+                Вызов функций выполняется из popup.js и хавается через событие chrome.runtime.onMessage.addListener() - найдёте в скрипте
+popup.js      - js для popup.html будут отправляться команды с формы до фонового скрипта описанного выше
 
 
+Файл manifest.json задаёт общи правила для всего расширения
+
+Используем manifest версии 2.  (Файл манифест уже сконфигурирован, для текущей задачи в нём менять ничего не нужно)
+Что такое файл манифест? С помощью манифеста мы:
+сообщаем о том, что мы сделали за расширение;
+указываем, где хранятся его иконки;
+запрашиваем доступы к вкладкам;
+сообщаем о том, что будем выполнять фоновые скрипты;
+указываем, какой popup мы будем использовать.
 
 
+В проекте есть ещё файл manifestV3.json - он пока не активен, чисто на всякий случай сохранил
 
-Идеи на будущее:
-Подгрузка пути до сервера в во внешнем источнике, так как сервер может меняться
-Сделать всплывающие окно для отображения о том, что идут техработы или то что нужно перезагрузить браузер
-Подгрузка html и css тоже с отдельного источника.
+Дока по API video dom элементу: https://professorweb.ru/my/html/html5/level3/3_3.php
+
+Логотип тестовый, нужно будет нарисовать свой
